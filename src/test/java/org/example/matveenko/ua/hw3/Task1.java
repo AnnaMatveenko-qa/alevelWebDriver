@@ -27,6 +27,7 @@ public class Task1 {
         }
     }
 
+
     @Test
     public void checkPlaceholderInput() {
         WebDriver driver = new ChromeDriver();
