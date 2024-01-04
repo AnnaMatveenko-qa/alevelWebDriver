@@ -76,14 +76,15 @@ public class Task1 {
             Assert.assertTrue(button.isEnabled());
             System.out.println("button is enabled – Assert passed");
             button.click();
+
             new WebDriverWait(driver, Duration.ofSeconds(5)).
                     until(ExpectedConditions.presenceOfElementLocated(By
-                            .xpath("(//div[@aria-atomic='true']/div)[1]")));
+                            .xpath("//div[2]/div[2]/div")));
             Assert.assertTrue(driver.findElement(By
-                            .xpath("(//div[@aria-atomic='true']/div)[1]"))
+                            .xpath("//div[2]/div[2]/div"))
                     .isDisplayed());
             System.out.println(driver.findElement(By
-                    .xpath("(//div[@aria-atomic='true']/div)[1]")).getText());
+                    .xpath("//div[2]/div[2]/div")).getText());
         } finally {
             driver.quit();
         }
