@@ -65,6 +65,7 @@ public class Task1 {
     public void checkValidMessage() {
         WebDriver driver = new ChromeDriver();
         try {
+            String message = "Enter a valid email or phone number";
             driver.manage().window().maximize();
             driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
             driver.get("https://accounts.google.com/");
@@ -76,15 +77,16 @@ public class Task1 {
             Assert.assertTrue(button.isEnabled());
             System.out.println("button is enabled – Assert passed");
             button.click();
-
             new WebDriverWait(driver, Duration.ofSeconds(5)).
                     until(ExpectedConditions.presenceOfElementLocated(By
-                            .xpath("//div[2]/div[2]/div")));
+                            .xpath("//div[@role='presentation']//div[@aria-live='assertive']/div")));
             Assert.assertTrue(driver.findElement(By
-                            .xpath("//div[2]/div[2]/div"))
+                            .xpath("//div[@role='presentation']//div[@aria-live='assertive']/div"))
                     .isDisplayed());
+            Assert.assertEquals(message, driver.findElement(By
+                    .xpath("//div[@role='presentation']//div[@aria-live='assertive']/div")).getText());
             System.out.println(driver.findElement(By
-                    .xpath("//div[2]/div[2]/div")).getText());
+                    .xpath("//div[@role='presentation']//div[@aria-live='assertive']/div")).getText());
         } finally {
             driver.quit();
         }
