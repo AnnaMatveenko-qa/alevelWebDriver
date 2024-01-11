@@ -32,9 +32,10 @@ public class ActionsExample {
         DuoPage duoPage = new DuoPage(webDriver);
         String actual = duoPage.getLinkText();
         String expected = "Мінус 683 вакансії за місяць. Огляд IT-ринку праці, грудень 2023";
-        boolean result = Objects.equals(actual,expected);
+        boolean result = Objects.equals(actual, expected);
         Assert.assertFalse(result);
     }
+
     @Test
     public void test2() {
         DuoPage duoPage = new DuoPage(webDriver);
