@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name = "selenium">
+    <test name= "data provider">
+        <classes>
+            <class name="org.example.matveenko.ua.hw5.DataProviderExample"/>
+        </classes>
+    </test>
+    <test name="actions">
+        <classes>
+            <class name="org.example.matveenko.ua.hw4.ActionsExample"/>
+        </classes>
+    </test>
+</suite>
