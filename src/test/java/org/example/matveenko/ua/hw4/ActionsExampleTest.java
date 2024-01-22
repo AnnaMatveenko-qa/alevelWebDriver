@@ -11,7 +11,7 @@ import org.testng.annotations.Test;
 import java.time.Duration;
 import java.util.Objects;
 
-public class ActionsExample {
+public class ActionsExampleTest {
     private WebDriver webDriver;
 
     @BeforeTest
@@ -30,16 +30,15 @@ public class ActionsExample {
     @Test
     public void test1() {
         DuoPage duoPage = new DuoPage(webDriver);
-        String actual = duoPage.getLinkText();
+        String actual = duoPage.getLinkText(0);
         String expected = "Мінус 683 вакансії за місяць. Огляд IT-ринку праці, грудень 2023";
-        boolean result = Objects.equals(actual, expected);
-        Assert.assertFalse(result);
+        Assert.assertNotEquals(expected, actual);
     }
 
     @Test
     public void test2() {
         DuoPage duoPage = new DuoPage(webDriver);
-        duoPage.clickLink();
+        duoPage.clickLink(5);
     }
 }
 
