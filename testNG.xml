@@ -8,7 +8,7 @@
     </test>
     <test name="actions">
         <classes>
-            <class name="org.example.matveenko.ua.hw4.ActionsExample"/>
+            <class name="org.example.matveenko.ua.hw4.ActionsExampleTest"/>
         </classes>
     </test>
 </suite>
