@@ -11,7 +11,7 @@ import org.testng.annotations.Test;
 
 import java.time.Duration;
 
-public class Task1 {
+public class GoogleAccount {
     @Test
     public void successfulSearchInput() {
         WebDriver driver = new ChromeDriver();

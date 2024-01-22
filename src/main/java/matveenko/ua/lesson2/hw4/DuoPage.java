@@ -1,10 +1,13 @@
 package matveenko.ua.lesson2.hw4;
 
+import org.checkerframework.common.value.qual.IntRange;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+
+import java.util.List;
 
 public class DuoPage {
     private WebDriver driver;
@@ -15,17 +18,17 @@ public class DuoPage {
         PageFactory.initElements(driver,this);
     }
 
-    @FindBy(xpath = "//ul[@id='fp-articles_recent']/li[7]/a[@class='link ']")
-    private WebElement link;
+    @FindBy(xpath = "//ul[@id='fp-articles_recent']//a[@class='link ']")
+    private List<WebElement> links;
 
-    public String getLinkText()
+    public String getLinkText(int index)
     {
-        return link.getText();
+        return links.get(index).getText();
     }
 
-    public void clickLink()
+    public void clickLink(int index)
     {
-        new Actions(driver).click(link).build().perform();
+        new Actions(driver).click(links.get(index)).build().perform();
     }
 }
 
