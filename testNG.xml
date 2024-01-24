@@ -3,12 +3,7 @@
 <suite name = "selenium">
     <test name= "data provider">
         <classes>
-            <class name="org.example.matveenko.ua.hw5.DataProviderExample"/>
+            <class name="org.example.matveenko.ua.hw5.DataProviderExampleTests"/>
         </classes>
     </test>
-    <test name="actions">
-        <classes>
-            <class name="org.example.matveenko.ua.hw4.ActionsExampleTest"/>
-        </classes>
-    </test>
-</suite>
+   </suite>
