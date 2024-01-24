@@ -1,5 +1,6 @@
 package org.example.matveenko.ua.hw5;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
@@ -11,6 +12,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.*;
 
+import java.nio.file.Path;
 import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
@@ -26,12 +28,18 @@ public class DataProviderExampleTests {
                 "QA"
         };
     }
+    @BeforeSuite
+     static void setupClass() {
+        WebDriverManager.chromedriver().setup();
+            }
+
 
     @BeforeMethod
     public void before() {
+
         webDriver = new ChromeDriver();
         webDriver.get("https://www.work.ua/");
-        webDriver.manage().window().maximize();
+        //webDriver.manage().window().maximize();
         webDriver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
 
     }
