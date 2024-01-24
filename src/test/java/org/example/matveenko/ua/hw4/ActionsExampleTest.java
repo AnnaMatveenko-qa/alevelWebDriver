@@ -18,7 +18,7 @@ public class ActionsExampleTest {
     public void before() {
         webDriver = new ChromeDriver();
         webDriver.get("https://dou.ua/");
-        webDriver.manage().window().maximize();
+       // webDriver.manage().window().maximize();
         webDriver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
     }
 
