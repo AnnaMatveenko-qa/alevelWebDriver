@@ -31,7 +31,7 @@ public class DataProviderExampleTests {
     public void before() {
         webDriver = new ChromeDriver();
         webDriver.get("https://www.work.ua/");
-        webDriver.manage().window().maximize();
+       // webDriver.manage().window().maximize();
         webDriver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
 
     }
