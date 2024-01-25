@@ -6,6 +6,7 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -41,7 +42,8 @@ public class DataProviderExampleTests {
         webDriver.get("https://www.work.ua/");
         //webDriver.manage().window().maximize();
         webDriver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
-
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--headless");
     }
 
     @AfterMethod
@@ -62,7 +64,7 @@ public class DataProviderExampleTests {
         List<WebElement> links = webDriver.findElements(By.xpath("//h2[@class='cut-top cut-bottom']/a"));
         new WebDriverWait(webDriver, Duration.ofSeconds(5)).until(ExpectedConditions.
                 presenceOfAllElementsLocatedBy(By.xpath("//h2[@class='cut-top cut-bottom']/a")));
-        Assert.assertTrue(links.get(3).getText().toLowerCase().contains(data.toLowerCase()));
+        Assert.assertTrue(links.get(4).getText().toLowerCase().contains(data.toLowerCase()));
             }
 
         }

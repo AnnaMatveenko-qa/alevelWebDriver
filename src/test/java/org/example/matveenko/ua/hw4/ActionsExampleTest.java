@@ -4,6 +4,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import matveenko.ua.lesson2.hw4.DuoPage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeSuite;
@@ -25,6 +26,8 @@ public class ActionsExampleTest {
         webDriver.get("https://dou.ua/");
        // webDriver.manage().window().maximize();
         webDriver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--headless");
     }
 
     @AfterTest
