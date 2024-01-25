@@ -26,14 +26,15 @@ public class ActionsExampleTest {
     @BeforeTest
     public void before() {
         ChromeOptions options = new ChromeOptions();
-        webDriver = new ChromeDriver(options);
-        webDriver.get("https://dou.ua/");
-        // webDriver.manage().window().maximize();
-        webDriver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
         options.addArguments("--no-sandbox");
         options.addArguments("--remote-debugging-pipe");
         options.addArguments("--headless");
         options.addArguments("--disable-dev-shm-usage");
+        webDriver = new ChromeDriver(options);
+        webDriver.get("https://dou.ua/");
+        // webDriver.manage().window().maximize();
+        webDriver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
+
     }
 
     @AfterTest

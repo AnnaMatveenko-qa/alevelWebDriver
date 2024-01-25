@@ -40,14 +40,15 @@ public class DataProviderExampleTests {
     @BeforeMethod
     public void before() {
         ChromeOptions options = new ChromeOptions();
+        options.addArguments("--no-sandbox");
+        options.addArguments("--remote-debugging-pipe");
+        options.addArguments("--headless");
+        options.addArguments("--disable-dev-shm-usage");
         webDriver = new ChromeDriver(options);
         webDriver.get("https://www.work.ua/");
         //webDriver.manage().window().maximize();
         webDriver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
-        options.addArguments("--remote-debugging-pipe");
-        options.addArguments("--no-sandbox");
-        options.addArguments("--headless");
-        options.addArguments("--disable-dev-shm-usage");
+
     }
 
     @AfterMethod
