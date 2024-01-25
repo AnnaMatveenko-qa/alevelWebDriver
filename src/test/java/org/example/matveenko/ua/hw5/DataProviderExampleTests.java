@@ -44,8 +44,9 @@ public class DataProviderExampleTests {
         //webDriver.manage().window().maximize();
         webDriver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
         ChromeOptions options = new ChromeOptions();
-        options.addArguments("--headless");
+        options.addArguments("--remote-debugging-pipe");
         options.addArguments("--no-sandbox");
+        options.addArguments("--headless");
         options.addArguments("--disable-dev-shm-usage");
     }
 
