@@ -28,6 +28,8 @@ public class ActionsExampleTest {
         webDriver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--headless");
+        options.addArguments("--no-sandbox");
+        options.addArguments("--disable-dev-shm-usage");
     }
 
     @AfterTest

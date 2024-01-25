@@ -29,10 +29,11 @@ public class DataProviderExampleTests {
                 "QA"
         };
     }
+
     @BeforeSuite
-     static void setupClass() {
+    static void setupClass() {
         WebDriverManager.chromedriver().setup();
-            }
+    }
 
 
     @BeforeMethod
@@ -44,6 +45,8 @@ public class DataProviderExampleTests {
         webDriver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--headless");
+        options.addArguments("--no-sandbox");
+        options.addArguments("--disable-dev-shm-usage");
     }
 
     @AfterMethod
@@ -54,7 +57,7 @@ public class DataProviderExampleTests {
     @Test(dataProvider = "Data")
     public void checkSearch(String data) {
         WebElement input = webDriver.findElement(By.id("search"));
-        WebElement inputCity=webDriver.findElement(By.
+        WebElement inputCity = webDriver.findElement(By.
                 xpath("//div/input[@class='js-main-region form-control ']"));
         inputCity.click();
         inputCity.clear();
@@ -65,8 +68,8 @@ public class DataProviderExampleTests {
         new WebDriverWait(webDriver, Duration.ofSeconds(5)).until(ExpectedConditions.
                 presenceOfAllElementsLocatedBy(By.xpath("//h2[@class='cut-top cut-bottom']/a")));
         Assert.assertTrue(links.get(4).getText().toLowerCase().contains(data.toLowerCase()));
-            }
+    }
 
-        }
+}
 
 
