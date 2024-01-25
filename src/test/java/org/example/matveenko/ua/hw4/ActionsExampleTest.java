@@ -20,20 +20,20 @@ public class ActionsExampleTest {
     @BeforeSuite
     static void setupClass() {
         WebDriverManager.chromedriver().setup();
-        ChromeOptions options = new ChromeOptions();
-        options.addArguments("--no-sandbox");
-        options.addArguments("--remote-debugging-pipe");
-        options.addArguments("--headless");
-        options.addArguments("--disable-dev-shm-usage");
+
     }
 
     @BeforeTest
     public void before() {
-        webDriver = new ChromeDriver();
+        ChromeOptions options = new ChromeOptions();
+        webDriver = new ChromeDriver(options);
         webDriver.get("https://dou.ua/");
         // webDriver.manage().window().maximize();
         webDriver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
-
+        options.addArguments("--no-sandbox");
+        options.addArguments("--remote-debugging-pipe");
+        options.addArguments("--headless");
+        options.addArguments("--disable-dev-shm-usage");
     }
 
     @AfterTest
