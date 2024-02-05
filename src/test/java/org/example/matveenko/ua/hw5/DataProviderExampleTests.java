@@ -31,7 +31,7 @@ public class DataProviderExampleTests {
     }
 
     @BeforeSuite
-    static void setupClass() {
+     void setupClass() {
         WebDriverManager.chromedriver().setup();
 
     }
@@ -39,14 +39,14 @@ public class DataProviderExampleTests {
 
     @BeforeMethod
     public void before() {
-        ChromeOptions options = new ChromeOptions();
+       ChromeOptions options = new ChromeOptions();
         options.addArguments("--no-sandbox");
         options.addArguments("--remote-debugging-pipe");
         options.addArguments("--headless");
         options.addArguments("--disable-dev-shm-usage");
         webDriver = new ChromeDriver(options);
         webDriver.get("https://www.work.ua/");
-        //webDriver.manage().window().maximize();
+      //  webDriver.manage().window().maximize();
         webDriver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
 
     }
@@ -54,6 +54,7 @@ public class DataProviderExampleTests {
     @AfterMethod
     public void after() {
         webDriver.quit();
+        WebDriverManager.chromedriver().quit();
     }
 
     @Test(dataProvider = "Data")
