@@ -18,7 +18,7 @@ public class ActionsExampleTest {
     private WebDriver webDriver;
 
     @BeforeSuite
-    static void setupClass() {
+    public void setupClass() {
         WebDriverManager.chromedriver().setup();
 
     }
