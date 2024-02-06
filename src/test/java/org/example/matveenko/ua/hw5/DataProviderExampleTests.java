@@ -32,12 +32,12 @@ public class DataProviderExampleTests {
     public void before() {
         WebDriverManager.chromedriver().clearDriverCache().setup();
         WebDriverManager.chromedriver().clearResolutionCache().setup();
-      /*ChromeOptions options = new ChromeOptions();
-        options.addArguments("--no-sandbox");
-        options.addArguments("--remote-debugging-pipe");
+      ChromeOptions options = new ChromeOptions();
+       // options.addArguments("--no-sandbox");
+        //options.addArguments("--remote-debugging-pipe");
         options.addArguments("--headless");
-        options.addArguments("--disable-dev-shm-usage");*/
-        webDriver = new ChromeDriver();
+        //options.addArguments("--disable-dev-shm-usage");
+        webDriver = new ChromeDriver(options);
         webDriver.get("https://www.work.ua/");
         webDriver.manage().window().setSize(new Dimension(1600, 900));
         webDriver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
