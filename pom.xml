@@ -106,7 +106,7 @@
                     </systemPropertyVariables>
                     <suiteXmlFiles>
                         <suiteXmlFile>
-                            testNG.xml
+                            testNG1.xml
                         </suiteXmlFile>
                     </suiteXmlFiles>
                 </configuration>
