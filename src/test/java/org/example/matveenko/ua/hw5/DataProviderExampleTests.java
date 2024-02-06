@@ -30,7 +30,8 @@ public class DataProviderExampleTests {
 
     @BeforeMethod
     public void before() {
-        WebDriverManager.chromedriver().setup();
+        WebDriverManager.chromedriver().clearDriverCache().setup();
+        WebDriverManager.chromedriver().clearResolutionCache().setup();
       /*ChromeOptions options = new ChromeOptions();
         options.addArguments("--no-sandbox");
         options.addArguments("--remote-debugging-pipe");
