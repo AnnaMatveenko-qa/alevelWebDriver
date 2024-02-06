@@ -1,10 +1,7 @@
 package org.example.matveenko.ua.hw5;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
-import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.FindBy;
@@ -30,23 +27,18 @@ public class DataProviderExampleTests {
         };
     }
 
-    @BeforeSuite
-     void setupClass() {
-        WebDriverManager.chromedriver().setup();
-
-    }
-
 
     @BeforeMethod
     public void before() {
-       ChromeOptions options = new ChromeOptions();
+        WebDriverManager.chromedriver().setup();
+      /*ChromeOptions options = new ChromeOptions();
         options.addArguments("--no-sandbox");
         options.addArguments("--remote-debugging-pipe");
         options.addArguments("--headless");
-        options.addArguments("--disable-dev-shm-usage");
-        webDriver = new ChromeDriver(options);
+        options.addArguments("--disable-dev-shm-usage");*/
+        webDriver = new ChromeDriver();
         webDriver.get("https://www.work.ua/");
-      //  webDriver.manage().window().maximize();
+        webDriver.manage().window().setSize(new Dimension(1600, 900));
         webDriver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
 
     }

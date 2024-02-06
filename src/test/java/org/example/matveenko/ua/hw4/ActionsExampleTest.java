@@ -1,7 +1,9 @@
 package org.example.matveenko.ua.hw4;
 
+
 import io.github.bonigarcia.wdm.WebDriverManager;
 import matveenko.ua.lesson2.hw4.DuoPage;
+import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -17,22 +19,19 @@ import java.util.Objects;
 public class ActionsExampleTest {
     private WebDriver webDriver;
 
-    @BeforeSuite
-    public void setupClass() {
-        WebDriverManager.chromedriver().setup();
 
-    }
 
     @BeforeTest
     public void before() {
-        ChromeOptions options = new ChromeOptions();
+         WebDriverManager.chromedriver().setup();
+       /* ChromeOptions options = new ChromeOptions();
         options.addArguments("--no-sandbox");
         options.addArguments("--remote-debugging-pipe");
         options.addArguments("--headless");
-        options.addArguments("--disable-dev-shm-usage");
-        webDriver = new ChromeDriver(options);
+        options.addArguments("--disable-dev-shm-usage");*/
+        webDriver = new ChromeDriver();
         webDriver.get("https://dou.ua/");
-        // webDriver.manage().window().maximize();
+        webDriver.manage().window().setSize(new Dimension(1600, 900));
         webDriver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
 
     }
@@ -40,6 +39,7 @@ public class ActionsExampleTest {
     @AfterTest
     public void after() {
         webDriver.quit();
+         WebDriverManager.chromedriver().quit();
     }
 
     @Test
