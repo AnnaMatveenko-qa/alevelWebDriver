@@ -1,13 +1,14 @@
 package org.example.matveenko.ua.hw9;
 
 
+//import com.google.gson.Gson;
 import com.google.gson.Gson;
 import org.apache.http.HttpEntity;
 import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
-import org.apache.http.util.Asserts;
+
 import org.apache.http.util.EntityUtils;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -15,7 +16,7 @@ import org.testng.annotations.Test;
 import java.io.IOException;
 
 
-public class KeyTest {
+public class KeyTest{
 
     @Test
     public void hasKey() throws IOException {

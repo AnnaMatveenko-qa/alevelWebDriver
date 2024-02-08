@@ -9,6 +9,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Emojis {
+
     public String a;
     public String ab;
     public String abacus;
